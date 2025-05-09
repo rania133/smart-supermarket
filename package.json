@@ -10,7 +10,6 @@
   "author": "",
   "engines": {
     "node": "20.15.0"
-
   },
   "license": "ISC",
   "description": "",
@@ -19,6 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.11.0",
     "multer": "^1.4.5-lts.1",
@@ -27,3 +27,4 @@
     "stripe": "^18.0.0"
   }
 }
+ 

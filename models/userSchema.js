@@ -10,7 +10,6 @@ const mongoose =require('mongoose');
     },
     phone:{
         type:String,
-        required:true,
     },
     password:{
         type:String,
@@ -22,7 +21,7 @@ const mongoose =require('mongoose');
         default:'user',
     },
 
- },{timestamps:true});
+ },{timestamps:true}); 
 
  const User = mongoose.model("User",userSchema);
  module.exports = User;

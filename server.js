@@ -23,12 +23,12 @@ const authRoutes = require('./routes/auth.js');
 const paymentRoutes = require('./routes/paymentRoute.js');
 const categoryRoutes = require('./routes/categoryRoute.js');
 
-app.use('/api/auth', authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/carts", cartRoutes);
-app.use("/api/payment", paymentRoutes);
-app.use("/api/category", categoryRoutes);
+app.use('/api/auth' , authRoutes);
+app.use("/api/users" , userRoutes);
+app.use("/api/products" , productRoutes);
+app.use("/api/carts" , cartRoutes);
+app.use("/api/payment" , paymentRoutes);
+app.use("/api/category" , categoryRoutes);
 
 
 const connectDB = async () => {

@@ -6,6 +6,12 @@ exports.createProduct = async (req,res,next)=>{
         const { name , description , price , category , stock , qrCode, sizes }=req.body;
         const image = req.file ? req.file.filename : null;
 
+        const existingProduct = await Product.findOne({ name: name.trim() });
+        if (existingProduct) {
+          return res.status(400).json({ message: "Product already exists." });
+        };
+
+
         const newProduct =new Product({
             name:name.trim() ,
             description:description.trim() ,
@@ -16,8 +22,12 @@ exports.createProduct = async (req,res,next)=>{
             qrCode:qrCode,
             sizes, 
         });
+       
         await newProduct.save();
-        res.status(201).json({message:"Product created successfully."});
+        res.status(201).json({message:"Product created successfully.",
+         newProduct
+    });
+
     }catch(err){
         res.status(500).json({message:err.message});
     }
