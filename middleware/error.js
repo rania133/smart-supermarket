@@ -9,7 +9,7 @@ function errorHandler(err,req,res,next){
         return res.status(400).json({ message: err.message});
     }
 
-    if(err.name === "UnauthenticatedError"){
+    if(err.name === "UnauthenticatedError"){ 
         //jwt authentication error
         return res.status(401).json({ message: "Token not valid"});
 

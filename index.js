@@ -30,6 +30,9 @@ app.use("/api/carts" , cartRoutes);
 app.use("/api/payment" , paymentRoutes);
 app.use("/api/category" , categoryRoutes);
 
+app.get("/",(req , res)=>{
+    res.send("Api is running");
+});
 
 const connectDB = async () => {
     try {
@@ -38,13 +41,16 @@ const connectDB = async () => {
         console.log(" MongoDB Connected Successfully");
         // seedData();
     } catch (error) { 
+
         console.error(" MongoDB Connection Failed:", error);
         process.exit(1);
     }
 };
-connectDB();  
+connectDB();
 
-app.listen(PORT, () => {
-    console.log(` Server running on port ${PORT}`);
-});  
+
+
+// app.listen(PORT, () => {
+//     console.log(` Server running on port ${PORT}`);
+// });  
  
